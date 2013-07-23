@@ -1,0 +1,285 @@
+
+<script src="js/jquery-1.8.2.min.js"></script>
+
+<!-- <icsdropdown> -->
+<link rel="stylesheet" type="text/css" href="css/dd.css" />
+<link rel="stylesheet" type="text/css" href="css/flags.css" />
+<script src="js/jquery.ics.js"></script>
+<script src="js/icsmaskedinput.js"></script>
+
+
+<!-- </icsdropdown> -->
+<style>
+.text-box{
+border-radius: 5px;
+padding: 5px;
+font-size: 17px;
+width:150px;
+}
+</style>
+
+<form id="form4" name="form4" method="post" action="" onSubmit="return validation();">
+
+  <select name="countries" id="countries" style="width:80px;">
+  <option value='+376' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ad" data-title="AD">AD</option>
+  <option value='ae' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ae" data-title="United Arab Emirates">AE</option>
+  <option value='+93' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag af" data-title="Afghanistan">AF</option>
+  <option value='+1 268' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ag" data-title="Antigua and Barbuda">AG</option>
+  <option value='+1 264' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ai" data-title="Anguilla">AI</option>
+  <option value='+355' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag al" data-title="Albania">AL</option>
+  <option value='+374' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag am" data-title="Armenia">AM</option>
+  <option value='an' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag an" data-title="Netherlands Antilles">AN</option>
+  <option value='+244' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ao" data-title="Angola">AO</option>
+  <option value='+672' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag aq" data-title="Antarctica">AQ</option>
+  <option value='+54' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ar" data-title="Argentina">AR</option>
+  <option value='+1 684' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag as" data-title="American Samoa">AS</option>
+  <option value='+43' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag at" data-title="Austria">AT</option>
+  <option value='+61' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag au" data-title="Australia">AU</option>
+  <option value='+297' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag aw" data-title="Aruba">AW</option>
+  <option value='ax' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ax" data-title="Aland Islands">AX</option>
+  <option value='+994' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag az" data-title="Azerbaijan">AZ</option>
+  <option value='ba' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ba" data-title="Bosnia and Herzegovina">BA</option>
+  <option value='+1 246' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bb" data-title="Barbados">BB</option>
+  <option value='+880' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bd" data-title="Bangladesh">BD</option>
+  <option value='+32' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag be" data-title="Belgium">BE</option>
+  <option value='bf' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bf" data-title="Burkina Faso">BF</option>
+  <option value='bg' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bg" data-title="Bulgaria">BG</option>
+  <option value='+973' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bh" data-title="Bahrain">BH</option>
+  <option value='bi' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bi" data-title="Burundi">BI</option>
+  <option value='+229' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bj" data-title="Benin">BJ</option>
+  <option value='+1 441' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bm" data-title="Bermuda">BM</option>
+  <option value='bn' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bn" data-title="Brunei Darussalam">BN</option>
+  <option value='bo' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bo" data-title="Bolivia">BO</option>
+  <option value='br' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag br" data-title="Brazil">BR</option>
+  <option value='+1 242' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bs" data-title="Bahamas">BS</option>
+  <option value='+975' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bt" data-title="Bhutan">BT</option>
+  <option value='bv' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bv" data-title="Bouvet Island">BV</option>
+  <option value='bw' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bw" data-title="Botswana">BW</option>
+  <option value='+375' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag by" data-title="Belarus">BY</option>
+  <option value='+501' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag bz" data-title="Belize">BZ</option>
+  <option value='ca' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ca" data-title="Canada">CA</option>
+  <option value='cc' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cc" data-title="Cocos (Keeling) Islands">CC</option>
+  <option value='cd' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cd" data-title="Democratic Republic of the Congo">CD</option>
+  <option value='cf' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cf" data-title="Central African Republic">CF</option>
+  <option value='cg' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cg" data-title="Congo">CG</option>
+  <option value='ch' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ch" data-title="Switzerland">CH</option>
+  <option value='ci' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ci" data-title="Cote D'Ivoire (Ivory Coast)">CI</option>
+  <option value='ck' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ck" data-title="Cook Islands">CK</option>
+  <option value='cl' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cl" data-title="Chile">CL</option>
+  <option value='cm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cm" data-title="Cameroon">CM</option>
+  <option value='cn' data-image="images/blank.gif" data-format="(99) 99999999" data-imagecss="flag cn" data-title="China">CN</option>
+  <option value='co' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag co" data-title="Colombia">CO</option>
+  <option value='cr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cr" data-title="Costa Rica">CR</option>
+  <option value='cs' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cs" data-title="Serbia and Montenegro">CS</option>
+  <option value='cu' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cu" data-title="Cuba">CU</option>
+  <option value='cv' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cv" data-title="Cape Verde">CV</option>
+  <option value='cx' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cx" data-title="Christmas Island">CX</option>
+  <option value='cy' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cy" data-title="Cyprus">CY</option>
+  <option value='cz' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag cz" data-title="Czech Republic">CZ</option>
+  <option value='de' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag de" data-title="Germany">DE</option>
+  <option value='dj' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag dj" data-title="Djibouti">DJ</option>
+  <option value='dk' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag dk" data-title="Denmark">DK</option>
+  <option value='dm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag dm" data-title="Dominica">DM</option>
+  <option value='do' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag do" data-title="Dominican Republic">DO</option>
+  <option value='+213' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag dz" data-title="Algeria">DZ</option>
+  <option value='ec' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ec" data-title="Ecuador">EC</option>
+  <option value='ee' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ee" data-title="Estonia">EE</option>
+  <option value='eg' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag eg" data-title="Egypt">EG</option>
+  <option value='eh' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag eh" data-title="Western Sahara">EH</option>
+  <option value='er' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag er" data-title="Eritrea">ER</option>
+  <option value='es' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag es" data-title="Spain">ES</option>
+  <option value='et' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag et" data-title="Ethiopia">ET</option>
+  <option value='fi' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag fi" data-title="Finland">FI</option>
+  <option value='fj' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag fj" data-title="Fiji">FJ</option>
+  <option value='fk' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag fk" data-title="Falkland Islands (Malvinas)">FK</option>
+  <option value='fm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag fm" data-title="Federated States of Micronesia">FM</option>
+  <option value='fo' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag fo" data-title="Faroe Islands">FO</option>
+  <option value='fr' data-image="images/blank.gif" data-format="99-99-99-99-99" data-imagecss="flag fr" data-title="France">FR</option>
+  <option value='fx' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag fx" data-title="France, Metropolitan">FX</option>
+  <option value='ga' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ga" data-title="Gabon">GA</option>
+  <option value='gb' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gb" data-title="Great Britain (UK)">GB</option>
+  <option value='gd' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gd" data-title="Grenada">GD</option>
+  <option value='ge' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ge" data-title="Georgia">GE</option>
+  <option value='gf' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gf" data-title="French Guiana">GF</option>
+  <option value='gh' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gh" data-title="Ghana">GH</option>
+  <option value='gi' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gi" data-title="Gibraltar">GI</option>
+  <option value='gl' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gl" data-title="Greenland">GL</option>
+  <option value='gm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gm" data-title="Gambia">GM</option>
+  <option value='gn' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gn" data-title="Guinea">GN</option>
+  <option value='gp' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gp" data-title="Guadeloupe">GP</option>
+  <option value='gq' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gq" data-title="Equatorial Guinea">GQ</option>
+  <option value='gr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gr" data-title="Greece">GR</option>
+  <option value='gs' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gs" data-title="S. Georgia and S. Sandwich Islands">GS</option>
+  <option value='gt' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gt" data-title="Guatemala">GT</option>
+  <option value='gu' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gu" data-title="Guam">GU</option>
+  <option value='gw' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gw" data-title="Guinea-Bissau">GW</option>
+  <option value='gy' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag gy" data-title="Guyana">GY</option>
+  <option value='hk' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag hk" data-title="Hong Kong">HK</option>
+  <option value='hm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag hm" data-title="Heard Island and McDonald Islands">HM</option>
+  <option value='hn' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag hn" data-title="Honduras">HN</option>
+  <option value='hr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag hr" data-title="Croatia (Hrvatska)">HR</option>
+  <option value='ht' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ht" data-title="Haiti">HT</option>
+  <option value='hu' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag hu" data-title="Hungary">HU</option>
+  <option value='id' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag id" data-title="Indonesia">ID</option>
+  <option value='ie' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ie" data-title="Ireland">IE</option>
+  <option value='il' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag il" data-title="Israel">IL</option>
+  <option value='+91' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag in" data-title="India">IN</option>
+  <option value='io' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag io" data-title="British Indian Ocean Territory">IO</option>
+  <option value='iq' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag iq" data-title="Iraq">IQ</option>
+  <option value='ir' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ir" data-title="Iran">IR</option>
+  <option value='is' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag is" data-title="Iceland">IS</option>
+  <option value='it' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag it" data-title="Italy">IT</option>
+  <option value='jm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag jm" data-title="Jamaica">JM</option>
+  <option value='jo' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag jo" data-title="Jordan">JO</option>
+  <option value='jp' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag jp" data-title="Japan">JP</option>
+  <option value='ke' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ke" data-title="Kenya">KE</option>
+  <option value='kg' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag kg" data-title="Kyrgyzstan">KG</option>
+  <option value='kh' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag kh" data-title="Cambodia">KH</option>
+  <option value='ki' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ki" data-title="Kiribati">KI</option>
+  <option value='km' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag km" data-title="Comoros">KM</option>
+  <option value='kn' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag kn" data-title="Saint Kitts and Nevis">KN</option>
+  <option value='kp' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag kp" data-title="Korea (North)">KP</option>
+  <option value='kr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag kr" data-title="Korea (South)">KR</option>
+  <option value='kw' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag kw" data-title="Kuwait">KW</option>
+  <option value='ky' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ky" data-title="Cayman Islands">KY</option>
+  <option value='kz' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag kz" data-title="Kazakhstan">KZ</option>
+  <option value='la' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag la" data-title="Laos">LA</option>
+  <option value='lb' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag lb" data-title="Lebanon">LB</option>
+  <option value='lc' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag lc" data-title="Saint Lucia">LC</option>
+  <option value='li' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag li" data-title="Liechtenstein">LI</option>
+  <option value='lk' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag lk" data-title="Sri Lanka">LK</option>
+  <option value='lr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag lr" data-title="Liberia">LR</option>
+  <option value='ls' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ls" data-title="Lesotho">LS</option>
+  <option value='lt' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag lt" data-title="Lithuania">LT</option>
+  <option value='lu' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag lu" data-title="Luxembourg">LU</option>
+  <option value='lv' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag lv" data-title="Latvia">LV</option>
+  <option value='ly' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ly" data-title="Libya">LY</option>
+  <option value='ma' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ma" data-title="Morocco">MA</option>
+  <option value='mc' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mc" data-title="Monaco">MC</option>
+  <option value='md' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag md" data-title="Moldova">MD</option>
+  <option value='mg' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mg" data-title="Madagascar">MG</option>
+  <option value='mh' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mh" data-title="Marshall Islands">MH</option>
+  <option value='mk' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mk" data-title="Macedonia">MK</option>
+  <option value='ml' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ml" data-title="Mali">ML</option>
+  <option value='mm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mm" data-title="Myanmar">MM</option>
+  <option value='mn' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mn" data-title="Mongolia">MN</option>
+  <option value='mo' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mo" data-title="Macao">MO</option>
+  <option value='mp' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mp" data-title="Northern Mariana Islands">MP</option>
+  <option value='mq' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mq" data-title="Martinique">MQ</option>
+  <option value='mr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mr" data-title="Mauritania">MR</option>
+  <option value='ms' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ms" data-title="Montserrat">MS</option>
+  <option value='mt' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mt" data-title="Malta">MT</option>
+  <option value='mu' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mu" data-title="Mauritius">MU</option>
+  <option value='mv' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mv" data-title="Maldives">MV</option>
+  <option value='mw' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mw" data-title="Malawi">MW</option>
+  <option value='mx' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mx" data-title="Mexico">MX</option>
+  <option value='my' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag my" data-title="Malaysia">MY</option>
+  <option value='mz' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mz" data-title="Mozambique">MZ</option>
+  <option value='na' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag na" data-title="Namibia">NA</option>
+  <option value='nc' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag nc" data-title="New Caledonia">NC</option>
+  <option value='ne' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ne" data-title="Niger">NE</option>
+  <option value='nf' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag nf" data-title="Norfolk Island">NF</option>
+  <option value='ng' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ng" data-title="Nigeria">NG</option>
+  <option value='ni' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ni" data-title="Nicaragua">NI</option>
+  <option value='nl' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag nl" data-title="Netherlands">NL</option>
+  <option value='no' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag no" data-title="Norway">NO</option>
+  <option value='np' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag np" data-title="Nepal">NP</option>
+  <option value='nr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag nr" data-title="Nauru">NR</option>
+  <option value='nu' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag nu" data-title="Niue">NU</option>
+  <option value='nz' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag nz" data-title="New Zealand (Aotearoa)">NZ</option>
+  <option value='om' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag om" data-title="Oman">OM</option>
+  <option value='pa' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag pa" data-title="Panama">PA</option>
+  <option value='pe' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag pe" data-title="Peru">PE</option>
+  <option value='pf' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag pf" data-title="French Polynesia">PF</option>
+  <option value='pg' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag pg" data-title="Papua New Guinea">PG</option>
+  <option value='ph' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ph" data-title="Philippines">PH</option>
+  <option value='pk' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag pk" data-title="Pakistan">PK</option>
+  <option value='pl' data-image="images/blank.gif" data-format="(99)999.99.99" data-imagecss="flag pl" data-title="Poland">PL</option>
+  <option value='pm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag pm" data-title="Saint Pierre and Miquelon">PM</option>
+  <option value='pn' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag pn" data-title="Pitcairn">PN</option>
+  <option value='pr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag pr" data-title="Puerto Rico">PR</option>
+  <option value='ps' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ps" data-title="Palestinian Territory">PS</option>
+  <option value='pt' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag pt" data-title="Portugal">PT</option>
+  <option value='pw' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag pw" data-title="Palau">PW</option>
+  <option value='py' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag py" data-title="Paraguay">PY</option>
+  <option value='qa' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag qa" data-title="Qatar">QA</option>
+  <option value='re' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag re" data-title="Reunion">RE</option>
+  <option value='ro' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ro" data-title="Romania">RO</option>
+  <option value='ru' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ru" data-title="Russian Federation">RU</option>
+  <option value='rw' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag rw" data-title="Rwanda">RW</option>
+  <option value='sa' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sa" data-title="Saudi Arabia">SA</option>
+  <option value='sb' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sb" data-title="Solomon Islands">SB</option>
+  <option value='sc' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sc" data-title="Seychelles">SC</option>
+  <option value='sd' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sd" data-title="Sudan">SD</option>
+  <option value='se' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag se" data-title="Sweden">SE</option>
+  <option value='sg' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sg" data-title="Singapore">SG</option>
+  <option value='sh' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sh" data-title="Saint Helena">SH</option>
+  <option value='si' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag si" data-title="Slovenia">SI</option>
+  <option value='sj' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sj" data-title="Svalbard and Jan Mayen">SJ</option>
+  <option value='sk' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sk" data-title="Slovakia">SK</option>
+  <option value='sl' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sl" data-title="Sierra Leone">SL</option>
+  <option value='sm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sm" data-title="San Marino">SM</option>
+  <option value='sn' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sn" data-title="Senegal">SN</option>
+  <option value='so' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag so" data-title="Somalia">SO</option>
+  <option value='sr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sr" data-title="Suriname">SR</option>
+  <option value='st' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag st" data-title="Sao Tome and Principe">ST</option>
+  <option value='su' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag su" data-title="USSR (former)">SU</option>
+  <option value='sv' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sv" data-title="El Salvador">SV</option>
+  <option value='sy' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sy" data-title="Syria">SY</option>
+  <option value='sz' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag sz" data-title="Swaziland">SZ</option>
+  <option value='tc' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tc" data-title="Turks and Caicos Islands">TC</option>
+  <option value='td' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag td" data-title="Chad">TD</option>
+  <option value='tf' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tf" data-title="French Southern Territories">TF</option>
+  <option value='tg' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tg" data-title="Togo">TG</option>
+  <option value='th' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag th" data-title="Thailand">TH</option>
+  <option value='tj' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tj" data-title="Tajikistan">TJ</option>
+  <option value='tk' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tk" data-title="Tokelau">TK</option>
+  <option value='tl' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tl" data-title="Timor-Leste">TL</option>
+  <option value='tm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tm" data-title="Turkmenistan">TM</option>
+  <option value='tn' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tn" data-title="Tunisia">TN</option>
+  <option value='to' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag to" data-title="Tonga">TO</option>
+  <option value='tp' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tp" data-title="East Timor">TP</option>
+  <option value='tr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tr" data-title="Turkey">TR</option>
+  <option value='tt' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tt" data-title="Trinidad and Tobago">TT</option>
+  <option value='tv' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tv" data-title="Tuvalu">TV</option>
+  <option value='tw' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tw" data-title="Taiwan">TW</option>
+  <option value='tz' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag tz" data-title="Tanzania">TZ</option>
+  <option value='ua' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ua" data-title="Ukraine">UA</option>
+  <option value='ug' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ug" data-title="Uganda">UG</option>
+  <option value='um' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag um" data-title="United States Minor Outlying Islands">UM</option>
+   <option value='+1' data-image="images/blank.gif" data-format="999-999-9999" data-imagecss="flag us" data-title="United States"  selected="selected">US</option>
+  <option value='+44' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag uk" data-title="United Kingdom">UK</option>
+  <option value='uy' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag uy" data-title="Uruguay">UY</option>
+  <option value='uz' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag uz" data-title="Uzbekistan">UZ</option>
+  <option value='va' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag va" data-title="Vatican City State (Holy See)">VA</option>
+  <option value='vc' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag vc" data-title="Saint Vincent and the Grenadines">VC</option>
+  <option value='ve' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ve" data-title="Venezuela">VE</option>
+  <option value='vg' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag vg" data-title="Virgin Islands (British)">VG</option>
+  <option value='vi' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag vi" data-title="Virgin Islands (U.S.)">VI</option>
+  <option value='vn' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag vn" data-title="Viet Nam">VN</option>
+  <option value='vu' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag vu" data-title="Vanuatu">VU</option>
+  <option value='wf' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag wf" data-title="Wallis and Futuna">WF</option>
+  <option value='ws' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ws" data-title="Samoa">WS</option>
+  <option value='ye' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ye" data-title="Yemen">YE</option>
+  <option value='yt' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag yt" data-title="Mayotte">YT</option>
+  <option value='yu' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag yu" data-title="Yugoslavia (former)">YU</option>
+  <option value='za' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag za" data-title="South Africa">ZA</option>
+  <option value='zm' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag zm" data-title="Zambia">ZM</option>
+  <option value='zr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag zr" data-title="Zaire (former)">ZR</option>
+  <option value='zw' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag zw" data-title="Zimbabwe">ZW</option>
+</select>
+<input type="hidden" name="country-code" id="country-code">
+
+<input name="phone_number" class="text-box" type="text" id="phone_number"  align="top" />
+    
+ 
+    </form>
+<script>
+$(document).ready(function() {
+	$("#countries").icsCountry();
+	$("#phone_number").mask("999-999-9999");
+})
+
+</script>
+
+
