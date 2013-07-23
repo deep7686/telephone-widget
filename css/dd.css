@@ -13,7 +13,7 @@ opacity: .5; /* standard: ff gt 1.5, opera, safari */
 -ms-filter:"alpha(opacity=50)"; /* ie 8 */
 filter:alpha(opacity=50); /* ie lt 7 */
 -khtml-opacity:.5; /* safari 1.x */
--moz-opacity:.5; /* ff lt 1.5, netscape */
+-moz-opacity:.5; /* ff lt 1.5, netscape */ 
 color:#999999;
 }
 .ddcommon .clear{clear:both}
