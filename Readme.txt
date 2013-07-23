@@ -1,6 +1,7 @@
 International Telephone Number Widget
 Author: Deepak Sharma
 Reviewer1: Pushpendra
+Reviewer2: Anurag Arya
 Company: I-Cube Systems Private Limited
 
 Its a simple javascript & HTML implementation of international telephone number widget.
