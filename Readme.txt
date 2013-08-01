@@ -53,3 +53,15 @@ $(document).ready(function() {
 	);
 })
 </script>
+-----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
+Version 1.1 release with following functionalities:
+
+1. You can set more the one format for a country
+
+2. You can hide and show the multi format as define in step 4.
+
+3. Country code also show with the number where you enter.
+
+
