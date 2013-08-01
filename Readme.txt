@@ -56,7 +56,7 @@ $(document).ready(function() {
 -----------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 
-Version 1.1 release with following functionalities:
+Version 1.1 released with following functionalities:
 
 1. You can set more the one format for a country
 
