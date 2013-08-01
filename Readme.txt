@@ -47,7 +47,9 @@ Step 4 - Final nail in the coffin
 <script>
 $(document).ready(function() {
 	$("#countries").icsCountry();
-	$("#phone_number").mask("999-999-9999");
+	$("#number_type").icsCountry(
+		$("#number_type").show() //if multi format in a country set show();
+		//$("#number_type").hide() //if multi format in a country set hide(); if you want to hide this 
+	);
 })
-
 </script>
