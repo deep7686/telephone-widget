@@ -1,5 +1,7 @@
 International Telephone Number Widget
 Author: Deepak Sharma
+Reviewer1: Pushpendra
+Reviewer2: Anurag Arya
 Company: I-Cube Systems Private Limited
 
 Its a simple javascript & HTML implementation of international telephone number widget.
@@ -13,7 +15,7 @@ Benifits:
 Installation & Usage:
 
 - Download the code from ------- and keep the css files in your base css folder and js files in your base js folder (in the root directory of your project)
-- demo.html has the sample code to implement the widget. You can simply embed the code in demo.html to your page. 
+-index.html has the sample code to implement the widget. You can simply embed the code in index.html to your page. 
 OR Follow the following steps:
 
 Step 1 - Include the required JS & CSS:
