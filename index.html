@@ -14,8 +14,9 @@
 border-radius: 5px;
 padding: 5px;
 font-size: 17px;
-width:150px;
+width:160px;
 }
+.type{float:left;padding:0 !important;margin:0 5px 0 0;width:20px;height:20px;background:url(../images/flagssprite_small.png) no-repeat;}.type.ld{background-position:0 0}.type.ld2{background-position:0 0}.type.ld2{background-position:0 0}
 </style>
 
 <form id="form4" name="form4" method="post" action="" onSubmit="return validation();">
@@ -173,7 +174,7 @@ width:150px;
   <option value='mv' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mv" data-title="Maldives">MV</option>
   <option value='mw' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mw" data-title="Malawi">MW</option>
   <option value='mx' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mx" data-title="Mexico">MX</option>
-  <option value='my' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag my" data-title="Malaysia">MY</option>
+  <option value='my' data-image="images/blank.gif" data-format="999-9999-9999" data-imagecss="flag my" data-title="Malaysia">MY</option>
   <option value='mz' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag mz" data-title="Mozambique">MZ</option>
   <option value='na' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag na" data-title="Namibia">NA</option>
   <option value='nc' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag nc" data-title="New Caledonia">NC</option>
@@ -247,7 +248,7 @@ width:150px;
   <option value='ua' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ua" data-title="Ukraine">UA</option>
   <option value='ug' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag ug" data-title="Uganda">UG</option>
   <option value='um' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag um" data-title="United States Minor Outlying Islands">UM</option>
-   <option value='+1' data-image="images/blank.gif" data-format="999-999-9999" data-imagecss="flag us" data-title="United States"  selected="selected">US</option>
+   <option value='+1' data-image="images/blank.gif" data-format="999-999-9999" data-imagecss="flag us" data-title="United States Americas"  selected="selected">US</option>
   <option value='+44' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag uk" data-title="United Kingdom">UK</option>
   <option value='uy' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag uy" data-title="Uruguay">UY</option>
   <option value='uz' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag uz" data-title="Uzbekistan">UZ</option>
@@ -268,18 +269,27 @@ width:150px;
   <option value='zr' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag zr" data-title="Zaire (former)">ZR</option>
   <option value='zw' data-image="images/blank.gif" data-format="9999999999" data-imagecss="flag zw" data-title="Zimbabwe">ZW</option>
 </select>
-<input type="hidden" name="country-code" id="country-code">
+<input type="text" class="text-box" name="country-code" readonly="true" id="country-code" style="position: absolute;width: 20px;border: 0px;margin: 4px;">
 
-<input name="phone_number" class="text-box" type="text" id="phone_number"  align="top" />
-    
- 
+<input name="phone_number" style="padding-left: 53px;" class="text-box" type="text" id="phone_number"  align="top" />
+<select name="number_type" id="number_type" style="width:60px;">
+  <option value='type' data-image="images/mobile.png" data-format="999-999-9999" data-imagecss="type mb" data-title="Mobile 1"></option>   
+  <option value='type' data-image="images/mobile-2.png" data-format="999-9999-9999" data-imagecss="type mb1" data-title="Mobile 2"></option>
+  <option value='type' data-image="images/phone-icon.png" data-format="99-999-9999" data-imagecss="type ld" data-title="Landline 1"></option>   
+  <option value='type' data-image="images/phone-icon-2.png" data-format="999-9999-9999" data-imagecss="type ld2" data-title="Landline 2"></option>
+  <option value='type' data-image="images/no-format.png" data-format="9999999999" data-imagecss="type ld2" data-title="No format"></option>
+</select>
     </form>
 <script>
 $(document).ready(function() {
 	$("#countries").icsCountry();
-	$("#phone_number").mask("999-999-9999");
+	$("#number_type").icsCountry(
+		$("#number_type").show() //if multi format in a country set show();
+		//$("#number_type").hide() //if multi format in a country set hide(); if you want to hide this 
+	);
 })
 
 </script>
+
 
 

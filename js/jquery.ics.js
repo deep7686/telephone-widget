@@ -5,7 +5,6 @@
 // Revision: 16
 // web: www.iqbsys.com
 
-
 var msBeautify = msBeautify || {};
 (function ($) {
 msBeautify = {
@@ -21,6 +20,7 @@ msBeautify = {
 	},
 	oldDiv: '',
 	create: function (id, settings, type) {
+//alert(id);
 		type = type || "dropdown";
 		var data;
 		switch (type.toLowerCase()) {
@@ -49,6 +49,7 @@ if (typeof $.expr.createPseudo === 'function') {
 }
 //dropdown class
 function dd(element, settings) {
+	//alert(settings);
 	var _settings = $.extend(true,{byJson: {data: null, selectedIndex: 0, name: null, size: 0, multiple: false, width: 250},
 		mainCSS: 'dd',
 		height: 120, //not using currently
@@ -61,14 +62,14 @@ function dd(element, settings) {
 		event:'click',
 		openDirection: 'auto', //auto || alwaysUp
 		jsonTitle: true,
-		style: '',
+		style: 'none',
 		disabledOpacity: 0.7,
 		disabledOptionEvents: true,
 		on: {create: null,open: null,close: null,add: null,remove: null,change: null,blur: null,click: null,dblclick: null,mousemove: null,mouseover: null,mouseout: null,focus: null,mousedown: null,mouseup: null}
 		}, settings);								  
 	var _this = this; //this class	 
 	var _holderId = {postElementHolder: '_msddHolder', postID: '_msdd', postTitleID: '_title',postTitleTextID: '_titleText', postChildID: '_child'};
-	var _styles = {dd:_settings.mainCSS, ddTitle: 'ddTitle', arrow: 'arrow arrowoff', ddChild: 'ddChild', ddTitleText: 'ddTitleText',disabled: 'disabled', enabled: 'enabled', ddOutOfVision: 'ddOutOfVision', borderTop: 'borderTop', noBorderTop: 'noBorderTop', selected: 'selected', divider: 'divider', optgroup: "optgroup", optgroupTitle: "optgroupTitle", description: "description", label: "ddlabel",hover: 'hover',disabledAll: 'disabledAll'};
+	var _styles = {dd:_settings.mainCSS, ddTitle: 'ddTitle', arrow: 'arrow arrowoff', ddChild: 'ddChild', ddTitleText: 'ddTitleText',disabled: 'disabled', enabled: 'enabled', ddOutOfVision: 'ddOutOfVision', borderTop: 'borderTop', noBorderTop: 'noBorderTop', selected: 'selected', divider: 'divider', optgroup: "optgroup", optgroupTitle: "optgroupTitle", description: "description", label: "ddlabel",hover: 'hover',disabledAll: 'disabledAll',hidlabel: "hidlable"};
 	var _styles_i = {li: '_msddli_',borderRadiusTp: 'borderRadiusTp',ddChildMore: 'border shadow',fnone: "fnone"};
 	var _isList = false, _isMultiple=false,_isDisabled=false, _cacheElement = {}, _element, _orginial, _isOpen=false;
 	var DOWN_ARROW = 40, UP_ARROW = 38, LEFT_ARROW=37, RIGHT_ARROW=39, ESCAPE = 27, ENTER = 13, ALPHABETS_START = 47, SHIFT=16 , CONTROL = 17;
@@ -266,13 +267,16 @@ function dd(element, settings) {
 				oIcon.className = parsed.imagecss+" ";
 			};
 		};
+		//alert(_styles.label);
 		var oTitleText_in = _createElement("span", {className: _styles.label}, sText);
+		//var dsss = _createElement("span", {className: }, sText);
 		oTitle.appendChild(oDivider);
 		oTitle.appendChild(oArrow);
 		if (oIcon) {
 			oTitleText.appendChild(oIcon);
 		};
 		oTitleText.appendChild(oTitleText_in);
+		//oTitleText.appendChild(dsss);
 		oTitle.appendChild(oTitleText);
 		var oDescription = _createElement("span", {className: _styles.description}, parsed.description);
 		oTitleText.appendChild(oDescription);
@@ -280,6 +284,7 @@ function dd(element, settings) {
 	};
 	var _createFilterBox = function () {
 		var tid = _getPostID("postTitleTextID");
+		//alert(tid);
 		var sText = _createElement("input", {id: tid, type: 'text', value: '', autocomplete: 'off', className: 'text shadow borderRadius', style: 'display: none'});
 		return sText;
 	};
@@ -316,10 +321,14 @@ function dd(element, settings) {
 		var oTitleText = _createElement("span", {
 			className: _styles.label
 		}, sText);
+		var oTitleText2 = _createElement("p", {
+			className: "hidlable"
+		}, li.title);
 		if (oIcon) {
 			li.appendChild(oIcon);
 		};
 		li.appendChild(oTitleText);
+		li.appendChild(oTitleText2);
 		if (oDescription) {
 			li.appendChild(oDescription);
 		} else {
@@ -697,13 +706,22 @@ function dd(element, settings) {
 	var _applyFilters = function () {
 		var childid = _getPostID("postChildID");
 		var tid = _getPostID("postTitleTextID");
+		//alert(tid);
 		var sText = getElement(tid).value;
+		//alert(sText);
 		if (sText.length == 0) {
+			//alert(sText);
 			$("#" + childid + " li:hidden").show(); //show if hidden
 			_childHeight(_childHeight());
 		} else {
+			//alert(sText.length);
 			$("#" + childid + " li").hide();
-			$("#" + childid + " li:Contains('" + sText + "')").show();	
+			if(sText.length>2)
+				$("#" + childid + " li:has(p:Contains('" + sText + "'))").show();
+			//$("#" + childid + "li:has(span:contains('" + sText + "'))
+			$("#" + childid + " li:has(span:Contains('" + sText + "'))").show();	
+			//alert(sText.length);
+			
 			if ($("#" + childid + " li:visible").length <= _settings.visibleRows) {
 				_childHeight(-1); //set autoheight
 			};
@@ -1401,15 +1419,38 @@ function setHiddenValueAndPhoneValue(slelectValue,C_value,dataFormat)// I have c
 
 function setMsak(cCode,fieldId,dataFormat)
 {
+	var cc = "";
+	//alert(cCode);
+	var width="23px";
+	if(cCode.length==2)
+		width ="30px";
+	if(cCode.length==3)
+		width ="40px";
+	if(cCode.length==4)
+		width ="50px";
+
+	
+		if(dataFormat!=null)
+		{
 		
-		$("#"+fieldId).mask(dataFormat);//you can change the formate of this mask string here
+			$("#"+fieldId).mask("-"+dataFormat);//you can change the formate of this mask string here
+			if(cCode!="type")
+			{
+			document.getElementById(fieldId).style.paddingLeft=width;
+			document.getElementById("country-code").value=cCode;
+			document.getElementById("country-code").style.width=width;
+			}
+		}
+		
 }
 
 $.fn.extend({
 			icsCountry: function(settings)
 			{
+				//alert(settings);
 				return this.each(function()
 				{
+
 					if (!$(this).data('dd')){
 						var mydropdown = new dd(this, settings);
 						$(this).data('dd', mydropdown);

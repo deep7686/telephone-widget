@@ -108,6 +108,7 @@ $.fn.extend({
 					}
 				}),
 				focusText = input.val();
+				//alert(focusText);
 
 			function seekNext(pos) {
 				while (++pos < len && !tests[pos]);
@@ -296,7 +297,7 @@ $.fn.extend({
 				.bind("focus.mask", function() {
 					clearTimeout(caretTimeoutId);
 					var pos;
-
+//alert("deepak");
 					focusText = input.val();
 					pos = checkVal();
 					
@@ -310,9 +311,10 @@ $.fn.extend({
 					}, 10);
 				})
 				.bind("blur.mask", function() {
-					checkVal();
-					if (input.val() != focusText)
-						input.change();
+					//alert(input.val()+"fvalue"+focusText);
+					//checkVal();
+					//if (input.val() != focusText)
+						//input.change();
 				})
 				.bind("keydown.mask", keydownEvent)
 				.bind("keypress.mask", keypressEvent)

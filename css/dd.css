@@ -13,7 +13,7 @@ opacity: .5; /* standard: ff gt 1.5, opera, safari */
 -ms-filter:"alpha(opacity=50)"; /* ie 8 */
 filter:alpha(opacity=50); /* ie lt 7 */
 -khtml-opacity:.5; /* safari 1.x */
--moz-opacity:.5; /* ff lt 1.5, netscape */ 
+-moz-opacity:.5; /* ff lt 1.5, netscape */
 color:#999999;
 }
 .ddcommon .clear{clear:both}
@@ -41,7 +41,7 @@ img.fnone{float:none !important}
 .ddcommon .ddChild li.optgroup .optgroupTitle{padding:0 5px; font-weight:bold; font-style:italic}
 .ddcommon .ddChild li.optgroup ul li{padding:5px 5px 5px 15px}
 .ddcommon .noBorderTop{border-top:none 0  !important; padding:0; margin:0;}
-
+.hidlable{display:none; width:1px}
 /*************** default theme **********************/
 .dd{border:1px solid #c3c3c3;}
 .dd .divider{border-left:1px solid #c3c3c3; border-right:1px solid #fff;; right:24px;}
